@@ -4,6 +4,11 @@ import pygame
 # Initialize pygame so it runs in the background and manages things
 pygame.init()
 
+red = pygame.color(255,0,0)
+font = pygame.font.SysFont("Garamond",100)
+text = font.render("Jack", True, red)
+
+
 # Create a display. Size must be a tuple, which is why it's in parentheses
 screen = pygame.display.set_mode( (400, 300) )
 
@@ -16,3 +21,6 @@ while True:
         if event.type == pygame.QUIT:
             # If so, exit the program
             sys.exit()
+
+    screen.blit(text,0,0)
+    pygame.display.flip()
